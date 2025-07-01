@@ -1,6 +1,6 @@
 .button-container {
-  flex-basis: 35%;
-  background-color: red;
+  flex-basis: 34%;
+  background-color: beige;
   border: 5px solid black;
 }
 
@@ -11,13 +11,6 @@
   justify-content: center;
   align-items: center;
   background-color: turquoise;
-  border: 5px solid black;
-}
-
-.button-container p {
-  width: 50%;
-  height: 60%;
-  background-color: aqua;
   border: 5px solid black;
 }
 
@@ -33,12 +26,15 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
 }
 
 #noteInput {
@@ -52,21 +48,70 @@ body {
 }
 
 form {
-    display:flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-h1{
-    display:block;
-    float: left;
-    border:2px solid black;
-    width:100%;
+h1 {
+  position: absolute;
+  /* border:2px solid black; */
+  width: 100%;
+  margin-left: 30px;
+  top: -20px;
+  left: 34.5%;
+  font-size: 3em;
 }
-button[type="submit"]{
-    position:absolute;
-    width:100px;
-    right:2px;
+
+button[type="submit"] {
+  position: absolute;
+  width: 100px;
+  height: 35px;
+  right: 25px;
+  top: 35px;
+  border-radius: 5px;
+  background-color: blanchedalmond;
+  font-family: 'Gill Sans';
+}
+
+#noteInput {
+  background-attachment: local; /* ensures the background scrolls with content */
+  background-image: linear-gradient(to right, white 10px, transparent 10px),
+    /* Creates left margin */
+      linear-gradient(to left, white 10px, transparent 10px),
+    /* Creates right margin */
+      repeating-linear-gradient(
+        white,
+        white 30px,
+        #ccc 30px,
+        #ccc 31px,
+        white 31px
+      ); /* Creates repeating lines */
+  line-height: 31px; /* Sets the line height to match the gradient spacing */
+  padding: 8px 10px; /* Adds padding */
+}
+
+#noteTitle{
+    background-color: rgba(0,0,0,0);
+    width: 40%;
+    height: 48px;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em;   
+    font-weight: bolder; 
+    font-family: 'Gill Sans';
+    border-radius: 5px;
+    z-index: 3;
+}
+
+#noteTitle::placeholder{
+    font-weight: lighter;
     
 }
+
+#tabs{
+
+}
+
