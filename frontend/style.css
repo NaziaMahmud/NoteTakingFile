@@ -1,7 +1,10 @@
 .button-container {
+  display: flex;
+  flex-direction: column;
   flex-basis: 34%;
   background-color: beige;
   border: 5px solid black;
+  
 }
 
 .text-container {
@@ -111,6 +114,8 @@ button[type="submit"] {
     
 }
 
-#tabs{
-
+#tabs {
+  border: 2px solid black;
+  margin-bottom:2%;
+  z-index: 5;
 }

@@ -24,12 +24,14 @@ res.json(notes);
 });
 
 app.post("/api/notes", function(req,res){
+  console.log(req.body);
   const {title, text} = req.body;
   const newNote = {
     title, text
   }
   notes.push(newNote);
-
+  res.status(201).json(newNote);
+  console.log(notes+"added");
   });
 app.put("/", function (req, res) {
   console.log("testing");
