@@ -8,11 +8,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
-//app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, "frontend")));
 
-let notes = []; // To store your note objects
-let nextNoteId = 1; // To assign unique IDs to new notes
+let notes = []; 
+let nextNoteId = 1; 
 
 app.get("/", function(req, res){
     console.log("testing");
