@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const btn = document.createElement('button');
         btn.id = `tab${note.noteid}`;
         btn.textContent = note.title;
+        btn.classList.add("butt");
 
         document.querySelector(".button-container").appendChild(btn);
       });
@@ -100,4 +101,3 @@ btn.addEventListener('click', (event) => {
 document.querySelector(".button-container").appendChild(btn);
 
 });
-asdfghjkl

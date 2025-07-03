@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   flex-basis: 34%;
-  background-color: beige;
-  border: 5px solid black;
+  background-color: lavender;
+  border: 5px solid white;
   
 }
 
@@ -13,13 +13,13 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: turquoise;
-  border: 5px solid black;
+  background-color: skyblue;
+  border: 5px solid white;
 }
 
 .idk-lol {
   display: flex;
-  width: 100vw;
+  width: 100vw; 
   margin: 0;
   padding: 0;
   height: 100%;
@@ -108,11 +108,19 @@ button[type="submit"] {
     border-radius: 5px;
     z-index: 3;
 }
-.butt{
+.butt {
   height: 50px;
-  flex:2;
-
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: 2px solid black;
+  background-color: white;
+  font-family: 'Gill Sans';
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
+
+
 #noteTitle::placeholder{
     font-weight: lighter;
     
@@ -120,6 +128,7 @@ button[type="submit"] {
 
 #tabs {
   border: 2px solid black;
-  margin-bottom:2%;
+  margin-bottom:3%;
   z-index: 5;
+
 }
