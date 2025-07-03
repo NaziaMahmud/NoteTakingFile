@@ -12,10 +12,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "frontend")));
 
 let notes = []; 
+let noteidser = 1;
 
 app.get("/", function (req, res) {
   console.log("testing1");
   res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  
 });
 
 app.get("/api/notes", function(req,res){
@@ -24,9 +26,10 @@ res.json(notes);
 
 app.post("/api/notes", function(req,res){
   console.log(req.body);
-  const {title, text} = req.body;
+  const {title, text, noteid} = req.body;
+  noteidser = noteid;
   const newNote = {
-    title, text
+    title, text, noteid
   }
   notes.push(newNote);
   res.status(201).json(newNote);
