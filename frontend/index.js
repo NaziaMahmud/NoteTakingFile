@@ -111,7 +111,7 @@ document
     const del = document.createElement("span");
     del.textContent = "🗑️"; // Or "🗑️"
 
-    del.dataset.noteid = note.noteid;
+    del.dataset.noteid = newNote.noteid;
     btn.appendChild(del);
 
     document.querySelector(".button-container").appendChild(btn);
@@ -124,9 +124,9 @@ document
           noteposition = i;
         }
       }
-      document.querySelector("#noteTitle").value = event.target.innerHTML;
+      document.querySelector("#noteTitle").value = event.target.innerHTML.replace("🗑️","");
       document.querySelector("#noteInput").value = notesList[noteposition].text;
     });
 
-    document.querySelector(".button-container").appendChild(btn);
+    
   });
