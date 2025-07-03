@@ -79,7 +79,11 @@ notesList.push(newNote);
 // Instead of innerHTML += ...
 const btn = document.createElement('button');
 btn.id = `tab${newNote.noteid}`;
+btn.classList.add("butt");  
 btn.textContent = newNote.title;
+
+document.querySelector(".button-container").appendChild(btn);
+
 
 // Add listener directly to this button
 btn.addEventListener('click', (event) => {
