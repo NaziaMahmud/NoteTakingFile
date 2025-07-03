@@ -27,6 +27,17 @@ window.addEventListener("DOMContentLoaded", () => {
         btn.id = `tab${note.noteid}`;
         btn.textContent = note.title;
         btn.classList.add("butt");
+        
+
+  // Create the delete span
+  const del = document.createElement("span");
+  del.textContent = "🗑️"; // Or "🗑️"
+  
+  del.dataset.noteid = note.noteid; // So you know which note to delete
+
+  // Add both to the button
+  
+  btn.appendChild(del);
 
         document.querySelector(".button-container").appendChild(btn);
       });
@@ -47,7 +58,16 @@ document
         document.querySelector("#noteInput").value = note.text;
       }
     }
-  });
+    if (event.target.tagName === "SPAN") {
+      const clickedTitle = event.target.closest('button').textContent.replace("🗑️","");
+
+      const note = notesList.find((n) => n.title === clickedTitle)
+      if(note){
+        const index = notesList.findIndex((n) => n.title === clickedTitle);
+        notesList.splice(index,1);
+        document.querySelector(`#tab${note.noteid}`).remove();
+      }
+  }});
 
 document.querySelector("#noteForm").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -104,4 +124,3 @@ document
 document.querySelector(".button-container").appendChild(btn);
 
 });
-asdfghjkl
