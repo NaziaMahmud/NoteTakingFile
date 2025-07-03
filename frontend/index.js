@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const btn = document.createElement("button");
         btn.id = `tab${note.noteid}`;
         btn.textContent = note.title;
+        btn.classList.add("butt");
 
         document.querySelector(".button-container").appendChild(btn);
       });
@@ -100,5 +101,7 @@ document
       document.querySelector("#noteInput").value = notesList[noteposition].text;
     });
 
-    document.querySelector(".button-container").appendChild(btn);
-  });
+document.querySelector(".button-container").appendChild(btn);
+
+});
+asdfghjkl
