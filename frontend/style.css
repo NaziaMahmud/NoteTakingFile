@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   flex-basis: 34%;
-  background-color: beige;
-  border: 5px solid black;
+  background-color: lavender;
+  border: 5px solid white;
   
 }
 
@@ -13,8 +13,8 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: turquoise;
-  border: 5px solid black;
+  background-color: skyblue;
+  border: 5px solid white;
 }
 
 .idk-lol {
@@ -116,6 +116,7 @@ button[type="submit"] {
 
 #tabs {
   border: 2px solid black;
-  margin-bottom:2%;
+  margin-bottom:3%;
   z-index: 5;
+
 }
