@@ -27,17 +27,16 @@ window.addEventListener("DOMContentLoaded", () => {
         btn.id = `tab${note.noteid}`;
         btn.textContent = note.title;
         btn.classList.add("butt");
-        
 
-  // Create the delete span
-  const del = document.createElement("span");
-  del.textContent = "🗑️"; // Or "🗑️"
-  
-  del.dataset.noteid = note.noteid; // So you know which note to delete
+        // Create the delete span
+        const del = document.createElement("span");
+        del.textContent = "🗑️"; // Or "🗑️"
 
-  // Add both to the button
-  
-  btn.appendChild(del);
+        del.dataset.noteid = note.noteid; // So you know which note to delete
+
+        // Add both to the button
+
+        btn.appendChild(del);
 
         document.querySelector(".button-container").appendChild(btn);
       });
@@ -50,7 +49,7 @@ document
   .querySelector(".button-container")
   .addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
-      const clickedTitle = event.target.textContent;
+      const clickedTitle = event.target.textContent.replace("🗑️", "");
 
       const note = notesList.find((n) => n.title === clickedTitle);
       if (note) {
@@ -59,15 +58,18 @@ document
       }
     }
     if (event.target.tagName === "SPAN") {
-      const clickedTitle = event.target.closest('button').textContent.replace("🗑️","");
+      const clickedTitle = event.target
+        .closest("button")
+        .textContent.replace("🗑️", "");
 
-      const note = notesList.find((n) => n.title === clickedTitle)
-      if(note){
+      const note = notesList.find((n) => n.title === clickedTitle);
+      if (note) {
         const index = notesList.findIndex((n) => n.title === clickedTitle);
-        notesList.splice(index,1);
+        notesList.splice(index, 1);
         document.querySelector(`#tab${note.noteid}`).remove();
       }
-  }});
+    }
+  });
 
 document.querySelector("#noteForm").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -99,13 +101,18 @@ document
       .catch((error) => {
         console.error("Error saving note:", error);
       });
-    
+
     notesList.push(newNote);
     // Instead of innerHTML += ...
     const btn = document.createElement("button");
     btn.id = `tab${newNote.noteid}`;
     btn.classList.add("butt");
     btn.textContent = newNote.title;
+    const del = document.createElement("span");
+    del.textContent = "🗑️"; // Or "🗑️"
+
+    del.dataset.noteid = note.noteid;
+    btn.appendChild(del);
 
     document.querySelector(".button-container").appendChild(btn);
 
@@ -121,6 +128,5 @@ document
       document.querySelector("#noteInput").value = notesList[noteposition].text;
     });
 
-document.querySelector(".button-container").appendChild(btn);
-
-});
+    document.querySelector(".button-container").appendChild(btn);
+  });
