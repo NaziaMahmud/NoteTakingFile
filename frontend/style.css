@@ -129,6 +129,7 @@ button[type="submit"] {
   font-size: 20px;
   width: 93%;
   margin-left: 20px;
+  position: relative;
 }
 
 
@@ -142,4 +143,10 @@ button[type="submit"] {
   margin-bottom:3%;
   z-index: 5;
 
+}
+
+span{
+  position: absolute;
+  left: 90%;
+  top:10px;
 }
